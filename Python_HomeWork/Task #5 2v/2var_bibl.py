@@ -31,20 +31,15 @@ points.append(np.matrix([5, 3, 3]))
 points.append(np.matrix([5, 5, 3]))
 points.append(np.matrix([3, 5, 3]))
 
-projection_matrix = np.matrix([
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 0]
-])
+projection_matrix = np.matrix([[1, 0, 0], [0, 1, 0], [0, 0, 0]])
 
-projected_points = [
-    [n, n] for n in range(len(points))
-]
+projected_points = [[n, n] for n in range(len(points))]
 
 
 def connect_points(i, j, points):
     pygame.draw.line(
-        screen, red, (points[i][0], points[i][1]), (points[j][0], points[j][1]))
+        screen, red, (points[i][0], points[i][1]), (points[j][0], points[j][1])
+    )
 
 
 clock = pygame.time.Clock()
@@ -57,23 +52,29 @@ while True:
         if event.type == pygame.QUIT:
             exit()
 
-    rotation_z = np.matrix([
-        [cos(angle), -sin(angle), 0],
-        [sin(angle), cos(angle), 0],
-        [0, 0, 1],
-    ])
+    rotation_z = np.matrix(
+        [
+            [cos(angle), -sin(angle), 0],
+            [sin(angle), cos(angle), 0],
+            [0, 0, 1],
+        ]
+    )
 
-    rotation_y = np.matrix([
-        [cos(angle), 0, sin(angle)],
-        [0, 1, 0],
-        [-sin(angle), 0, cos(angle)],
-    ])
+    rotation_y = np.matrix(
+        [
+            [cos(angle), 0, sin(angle)],
+            [0, 1, 0],
+            [-sin(angle), 0, cos(angle)],
+        ]
+    )
 
-    rotation_x = np.matrix([
-        [1, 0, 0],
-        [0, cos(angle), -sin(angle)],
-        [0, sin(angle), cos(angle)],
-    ])
+    rotation_x = np.matrix(
+        [
+            [1, 0, 0],
+            [0, cos(angle), -sin(angle)],
+            [0, sin(angle), cos(angle)],
+        ]
+    )
 
     angle += 0.01
 

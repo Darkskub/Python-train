@@ -2,6 +2,7 @@ import unittest
 import sys
 import time
 
+
 def factorial(n: int):
     if n < 0:
         raise ValueError("Факториал отрицательного числа не определен")
@@ -13,6 +14,7 @@ def factorial(n: int):
         if result > sys.maxsize:
             raise ValueError(f"Факториал для {n} не поддерживается типом int")
     return result
+
 
 class TestFactorial(unittest.TestCase):
     def test_factorial_positive(self):
@@ -31,13 +33,14 @@ class TestFactorial(unittest.TestCase):
 
     def test_factorial_type_error(self):
         with self.assertRaises(TypeError):
-            factorial('five')
+            factorial("five")
 
     def test_factorial_float(self):
         with self.assertRaises(TypeError):
             factorial(5.5)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     start_time = time.time()
     unittest.main()
     end_time = time.time()

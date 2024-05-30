@@ -20,11 +20,13 @@ while True:
     else:
         print("Invalid multiplier entered")
 
+
 def Mult(a: list, b: int = 2) -> list:
     l1 = []
     for i in range(len(a)):
         l1.append(l[i] * b)
     return l1
+
 
 print(Mult(l))  # Тут без ввода второй переменной
 print(Mult(l, n))

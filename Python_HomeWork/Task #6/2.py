@@ -1,19 +1,20 @@
 import pytest
 
+
 def merge_and_write(file1_path, file2_path, output_file_path):
     try:
-        with open(file1_path, 'r') as file1:
+        with open(file1_path, "r") as file1:
             data1 = file1.read().strip()
 
-        with open(file2_path, 'r') as file2:
+        with open(file2_path, "r") as file2:
             data2 = file2.read().strip()
 
-        merged_data = data1 + ' ' + data2
+        merged_data = data1 + " " + data2
 
-        with open(output_file_path, 'w') as output_file:
+        with open(output_file_path, "w") as output_file:
             output_file.write(merged_data)
 
-        with open(output_file_path, 'r') as output_file:
+        with open(output_file_path, "r") as output_file:
             data = output_file.read()
         return data
     except FileNotFoundError:
@@ -31,6 +32,7 @@ def test_create_files(tmpdir):
 
     return file1, file2, output_file
 
+
 def test_merge_and_write(test_create_files):
     file1, file2, output_file = test_create_files
     expected_data = "Some text 1 Some text 2"
@@ -38,6 +40,7 @@ def test_merge_and_write(test_create_files):
     result = merge_and_write(str(file1), str(file2), str(output_file))
 
     assert result == expected_data
+
 
 def test_file_not_found():
     file1_path = "nonexistent_file1.txt"

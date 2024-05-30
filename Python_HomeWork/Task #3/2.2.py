@@ -26,7 +26,7 @@ while True:
 #         l1.append(l[i] * b)
 #     return l1
 
-Mult = lambda a, b = 2: [a[i] * b for i in range(len(a))]
+Mult = lambda a, b=2: [a[i] * b for i in range(len(a))]
 
 print(Mult(l))  # Тут без ввода второй переменной
 print(Mult(l, n))

@@ -9,7 +9,7 @@ class Wallet:
 
     def deposit(self, amount: float):
         self._balance += amount
-        return self._balance # Нужно для дебага
+        return self._balance  # Нужно для дебага
 
     def pay(self, amount: float):
         if self._balance >= amount:
@@ -25,6 +25,7 @@ class Wallet:
         del self._balance
         del self.name
         del self.currency
+
 
 a = Wallet("Vic", "$", 5000)
 

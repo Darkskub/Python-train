@@ -1,14 +1,19 @@
 Addition = lambda a, b: a + b
 Subtraction = lambda a, b: a - b
 Multiplication = lambda a, b: a * b
-Exponentiation = lambda a, b: a ** b
+Exponentiation = lambda a, b: a**b
+
+
 def Division(a, b):
     if b == 0:
         raise ValueError("You can't divide by 0")
     return a / b
 
+
 while True:
-    userInput = input("Enter the operation to be performed (example: 2 / 2, 3 ** 5), or exit: ").split(" ")
+    userInput = input(
+        "Enter the operation to be performed (example: 2 / 2, 3 ** 5), or exit: "
+    ).split(" ")
     if userInput == "exit":
         break
     elif len(userInput) != 3:

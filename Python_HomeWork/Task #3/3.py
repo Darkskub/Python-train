@@ -13,7 +13,7 @@ def function_name(search: str, status: int, *args, **kwargs) -> list | str:
             return result_2
     elif search == "kwargs":
         for k, v in kwargs.items():
-            result_2 += (" Key: {}, Value: {}; ".format(k, v))
+            result_2 += " Key: {}, Value: {}; ".format(k, v)
         return result_2
     else:
         raise ValueError("Error for search")

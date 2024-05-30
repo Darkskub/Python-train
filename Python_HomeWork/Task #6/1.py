@@ -5,7 +5,8 @@ def average_num(list_num: list) -> float:
                 list_num[ind] = int(el)
             except:
                 return "Bad request"
-    return round(sum(list_num)/len(list_num), 2)
+    return round(sum(list_num) / len(list_num), 2)
+
 
 assert average_num([1, 2, 3, 4, 5]) == 3.00
 

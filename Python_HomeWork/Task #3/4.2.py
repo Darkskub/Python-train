@@ -9,7 +9,7 @@ class Wallet:
 
     def deposit(self, amount: float):
         self._balance += amount
-        return self._balance # Нужно для дебага
+        return self._balance  # Нужно для дебага
 
     def pay(self, amount: float):
         if self._balance >= amount:
@@ -26,6 +26,7 @@ class Wallet:
         del self.name
         del self.currency
 
+
 class CryptoWallet(Wallet):
     def __init__(self, name, currency, coin, balance=0):
         super().__init__(name, currency, balance)
@@ -41,6 +42,7 @@ class CryptoWallet(Wallet):
             return self._balance * 3500
         else:
             return "Unknown coin"
+
 
 a = CryptoWallet("Vic", "$", "ETH", 5000)
 

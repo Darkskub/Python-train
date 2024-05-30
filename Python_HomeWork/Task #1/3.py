@@ -15,6 +15,8 @@ while True:
             print(x3, x1, x2)
             print(x3, x2, x1)
         else:
-            print("You entered a non-three-digit number or some of the numbers are the same")
+            print(
+                "You entered a non-three-digit number or some of the numbers are the same"
+            )
     else:
         print("You did not enter a three-digit number")

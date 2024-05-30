@@ -12,6 +12,8 @@ while True:
                 neg += x
             else:
                 pos += x
-        print(f"The sum of negative numbers is {neg} and the sum of positive numbers is {pos}")
+        print(
+            f"The sum of negative numbers is {neg} and the sum of positive numbers is {pos}"
+        )
     else:
         print("You did not enter a number")

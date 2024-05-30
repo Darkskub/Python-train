@@ -9,7 +9,7 @@ while True:
 l = []
 
 while len(l) < count:
-    element = (input(f"Enter the {len(l) + 1}th element of the list: "))
+    element = input(f"Enter the {len(l) + 1}th element of the list: ")
     if not element.isdigit():
         print("You did not enter a number")
         continue
