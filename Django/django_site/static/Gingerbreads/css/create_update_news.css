@@ -1,0 +1,17 @@
+.save_btn {
+    text-decoration: none;
+    margin: 10px 0 2% 0;
+    background-color: #28a745; /* Зеленый цвет фона */
+    color: white; /* Цвет текста */
+    border-radius: 12px; /* Подрезанные углы */
+    width: 65px;
+}
+.save_btn:hover {
+    transition: background-color 0.3s ease; /* Плавное изменение фона при наведении */
+    background-color: #218838; /* Цвет фона при наведении */
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}

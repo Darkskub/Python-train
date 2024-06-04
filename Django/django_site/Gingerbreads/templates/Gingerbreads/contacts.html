@@ -1,0 +1,29 @@
+{% extends 'Gingerbreads/layout.html' %}
+{% load static %}
+
+{% block title %}
+Контакты
+{% endblock title %}
+
+{% block static %}
+<link rel="stylesheet" href="{% static 'Gingerbreads/css/contacts.css' %}">
+{% endblock static %}
+
+{% block content %}
+<div class="content">
+    <h1>Контактная информация:</h1>
+
+    <h3>Адрес: Адрес</h3>
+
+    <h3>Телефон: +7 800 555 35 35</h3>
+
+    <h3>Электронная почта: Почта@почта</h3>
+
+    <h3>
+        График работы:
+        С начала сотворения вселенной до настоящего времени
+    </h3>
+
+    <h2> Если у вас есть вопросы, то лучше их забыть.</h2>
+</div>
+{% endblock content %}

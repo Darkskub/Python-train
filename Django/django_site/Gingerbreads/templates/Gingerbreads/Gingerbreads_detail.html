@@ -1,0 +1,65 @@
+{% extends 'Gingerbreads/layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{ blog.title }}
+{% endblock title %}
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'Gingerbreads/css/Gingerbreads_detail.css' %}">
+{% endblock static %}
+
+{% block content %}
+
+<div class='last_news'>
+    <div class='blog'>
+                <div class="nav">
+                <a class="arrow_btn" href = '{% url 'news:Gingerbreads_detail' pk=blog.id %}?post=prev'>пред. новость</a>
+                <a class='title_blog'>{{ blog.title }}</a>
+                <a class="arrow_btn" href = '{% url 'news:Gingerbreads_detail' pk=blog.id %}?post=next'>след. новость</a>
+                </div>
+                <a class='content_blog'>{{blog.content|linebreaks}}</a>
+                <div class='img_blog'>
+                    <div 
+                    style=
+                    'background: url({{blog.images.url}}) no-repeat; 
+                    background-position: center;
+                    background-size:cover;
+                    width: 100%; 
+                    height: 100%;'></div>
+                </div>
+                <div class='blog_info'>
+                    <a>by {{blog.author}}</a>
+                    <a>{{blog.date_published}}</a>
+                </div>  
+                <a style="padding-left: 2%;">Комментарии:</a>
+                <div class="comments">
+                    {% if user.is_authenticated %}
+                        <div class="com_form">
+                            <h3>Ваш комментарий:</h3>
+                            <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="com_form_btn">Отправить</button>
+                            </form>
+                        </div>
+                    {% else %}
+                        <h3 style="margin-bottom: 35px;">Авторизуйтесь, чтобы оставить комментарий</h3>
+                    {% endif %}
+                    {% if comments %}
+                        {% for comment in comments %}
+                            <div class="comment">
+                                <a>{{ comment.author }}</a>
+                                <a style="word-break: break-all;">{{ comment.text }}</a>
+                                <a style="padding-left:75%">{{ comment.date_published }}</a>
+                            </div>
+                            <hr style="width:100%; height:2px; background-color: white;">  
+                        {% endfor %}
+                    {% else %}
+                            <a class="no_comments">Комментариев пока нет</a>
+                    {% endif %}    
+                </div>    
+            </div>
+            <div class='footer_blog'></div>   
+    </div>
+{% endblock content %}

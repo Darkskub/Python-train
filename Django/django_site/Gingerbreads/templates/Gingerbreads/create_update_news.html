@@ -1,0 +1,24 @@
+{% extends 'Gingerbreads/layout.html' %}
+{% load static %}
+
+{% block title %}
+Новость
+{% endblock title %}
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'Gingerbreads/css/create_update_news.css' %}">
+{% endblock static %}
+
+{% block content %}
+    <div class="createform">
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form">
+                {% csrf_token %}
+                {{ form.title }}<br>
+                {{ form.content }}<br>
+                {{ form.images }}
+                <button class="save_btn" type="submit">Cоздать</button>
+            </div>    
+        </form>
+    </div>
+{% endblock content %}

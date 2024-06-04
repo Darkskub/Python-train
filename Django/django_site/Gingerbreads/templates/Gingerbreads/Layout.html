@@ -1,0 +1,53 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+    {% block title %}
+    {% endblock %}
+</title>
+<link rel="stylesheet" href="{% static 'Gingerbreads/css/layout.css' %}">
+<link rel="shortcut icon" href="{% static 'Gingerbreads/images/logo.png' %}">
+{% block static %}
+{% endblock %}
+</head>
+<body>
+    <div class="header">
+        <div class="nav-logo">
+            <a href='{% url 'news:Gingerbreads' %}' class="head_text">Спасибо чату ГПТ News</a>
+        </div>
+        <div class="user_logo">
+            {% if user.is_authenticated %}
+                <div style="display:flex; align-items: baseline">
+                <a  class="user_btn" href="{% url 'Users:profile' %}">{{ user.username }}</a>
+                <form action="{% url 'Users:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="user_btn">Выход</button>
+                </form>
+                </div>
+                {% if user.is_superuser %}
+                <div>
+                    <a class="admin_btn" href="{% url 'admin:index' %}">Панель администратора</a>
+                </div>
+                {% endif %}
+            {% else %}
+                <div>
+                    <a class="user_btn" href="{% url 'Users:login' %}">Вход</a>
+                    <a class="user_btn" href="{% url 'Users:register' %}">Регистрация</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="navigate">
+            <a href='{% url 'news:Gingerbreads' %}' class="nav_btn">Главная</a>
+            <a href='{% url 'news:News' %}' class="nav_btn">Новости</a>
+            <a href='{% url 'news:contacts' %}' class="nav_btn">Контакты</a>
+    </div>
+    
+    {% block content %}
+    {% endblock %}
+    <div class='footer'>
+        <h4>Прав нет, но мы их защищаем</h4>
+    </div>
+</body>
+</html>

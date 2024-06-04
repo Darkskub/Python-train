@@ -1,0 +1,25 @@
+{% extends 'Gingerbreads/layout.html' %}
+{% load static %}
+
+{% block title %}
+Авторизация
+{% endblock title %}
+
+{% block static %}
+<link rel="stylesheet" href="{% static 'Users/css/login.css' %}">
+{% endblock static %}
+
+{% block content %}
+    <div class="loginform">
+    <a class="title">Вход</a>
+    <div class="div_form">
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn_submit">Войти</button>
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

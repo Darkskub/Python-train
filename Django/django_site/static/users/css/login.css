@@ -1,0 +1,9 @@
+.title {
+    font-size: 1.5em;
+    padding-top: 10px;
+}
+.loginform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

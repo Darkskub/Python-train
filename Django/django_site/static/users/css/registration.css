@@ -1,0 +1,9 @@
+.regform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    font-size: 1.5em;
+    padding-top: 10px;
+}
