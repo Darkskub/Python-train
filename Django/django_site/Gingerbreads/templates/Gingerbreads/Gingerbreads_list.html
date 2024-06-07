@@ -12,12 +12,11 @@
 {% block content %}
     <div class="info">
         <h1>Тут главная страница, поздравляю ты её нашел </h1>
-        <h3>А вообще это новостной блог.
-        Который сгенерирован чатом.
+        <h3>А вообще это новостной блог, который сгенерирован чатом.
         </h3>
     </div>  
     <div class='last_news'>
-        <a style="border-bottom: 2px solid black;" class ='text_content'>Последние новости</a>
+        <a class ='text_content'>Последние новости</a>
         {% for blog in blogs %}
         <div class='blog'>
             <div style="width: 100%; display:flex; justify-content: center;">

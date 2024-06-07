@@ -6,6 +6,8 @@ body {
 .head_text {
     justify-content: center;
     font-size: 2em;
+    text-decoration: none;
+    color: black;
 }
 .nav-logo {
     display: flex;

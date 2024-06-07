@@ -32,9 +32,9 @@
     color: black;
     text-decoration: none;
     font-size: 1.3em;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 25%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 70%;
 }
 .title_blog:hover {
     transition: 300ms ease-in-out;
